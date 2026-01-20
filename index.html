@@ -154,7 +154,7 @@
     .logo-n {
       width: 72px;
       height: 72px;
-      background: #fdfdfd; /* lighter white */
+      background: #4b0082;       /* purple inside */
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -163,13 +163,30 @@
         25% 6.7%, 75% 6.7%, 
         100% 50%, 75% 93.3%, 
         25% 93.3%, 0% 50%
-      ); /* small hexagon shape */
+      ); /* hexagon shape */
+      position: relative;
+    }
+
+    /* Hollow white hex ring */
+    .logo-n::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px;
+      right: -2px; bottom: -2px;
+      border: 2px solid #fdfdfd; /* thin white ring */
+      clip-path: polygon(
+        25% 6.7%, 75% 6.7%, 
+        100% 50%, 75% 93.3%, 
+        25% 93.3%, 0% 50%
+      );
+      pointer-events: none;
     }
 
     .logo-n span {
       font-size: 42px;
       font-weight: bold;
-      color: #4b0082;
+      color: #fdfdfd;           /* N color white */
+      position: relative;        /* above the ring */
     }
 
     /* NX REWARDS CASHBACK BAR */
