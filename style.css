@@ -6,8 +6,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #f8f8f8;           /* outer page = soft white (like your light screenshot) */
-  color: #111;
+  background: #f8f8f8;           /* outer page background = soft white */
+  color: #111;                   /* dark text for white background */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -19,12 +19,12 @@ body {
 .ticket-container {
   width: 100%;
   max-width: 380px;
-  background: #ffffff;           /* ticket card = pure white (inside) */
+  background: #ffffff;           /* ticket card inside = pure white */
   border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12); /* softer shadow for light mode */
   position: relative;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;    /* subtle border to define ticket edges */
 }
 
 .close-btn {
