@@ -2,6 +2,26 @@ body {
   background: #111;
   color: white;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: #222;
+  padding: 20px;
+  width: 300px;
+  border-radius: 12px;
   text-align: center;
-  padding-top: 50px;
+}
+
+.warning {
+  color: red;
+  font-size: 12px;
+}
+
+.route {
+  margin-top: 10px;
+  opacity: 0.8;
 }
