@@ -95,7 +95,7 @@
     .expiry-container {
       position: relative;
       height: 78px;
-      margin: 0 20px 0; /* touches next element */
+      margin: 0 20px 0;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -140,30 +140,34 @@
       font-size: 18px;
       text-align: center;
       padding: 10px 0;
-      margin: 0 20px 0; /* touches logo */
+      margin: 0 20px 0;
       border-radius: 8px;
     }
 
-    /* LOGO AREA WITH JUST THE N */
+    /* LOGO AREA WITH HEX N */
     .logo-area {
-      padding: 0 20px 4px; /* small gap below logo for NX Rewards bar */
+      padding: 0 20px 4px;
       text-align: center;
       background: linear-gradient(to bottom, #4b0082, #301934);
     }
 
     .logo-n {
-      width: 88px;
-      height: 52px;
-      background: white;
+      width: 72px;
+      height: 72px;
+      background: #fdfdfd; /* lighter white */
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px; /* optional */
+      clip-path: polygon(
+        25% 6.7%, 75% 6.7%, 
+        100% 50%, 75% 93.3%, 
+        25% 93.3%, 0% 50%
+      ); /* small hexagon shape */
     }
 
     .logo-n span {
-      font-size: 54px;
+      font-size: 42px;
       font-weight: bold;
       color: #4b0082;
     }
@@ -176,7 +180,7 @@
       font-weight: bold;
       text-align: center;
       font-size: 15px;
-      margin: 0; /* small gap already added in logo-area */
+      margin: 0;
     }
 
     .footer-bar {
