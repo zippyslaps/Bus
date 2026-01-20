@@ -31,7 +31,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0;
       margin: 0;
     }
 
@@ -51,7 +50,6 @@
       right: 7px;
       font-size: 0;
       background: transparent;
-      z-index: 10;
     }
 
     .header {
@@ -101,9 +99,7 @@
       display: flex;
     }
 
-    .strip {
-      flex: 1;
-    }
+    .strip { flex: 1; }
 
     .expiry-time {
       position: absolute;
@@ -137,12 +133,14 @@
       border-radius: 8px;
     }
 
+    /* LOGO AREA */
     .logo-area {
       padding: 0 20px 4px;
       text-align: center;
       background: linear-gradient(to bottom, #4b0082, #301934);
     }
 
+    /* HEX LOGO (UPDATED PART) */
     .logo-n {
       width: 72px;
       height: 72px;
@@ -153,8 +151,8 @@
       justify-content: center;
       position: relative;
       clip-path: polygon(
-        25% 6.7%, 75% 6.7%, 
-        100% 50%, 75% 93.3%, 
+        25% 6.7%, 75% 6.7%,
+        100% 50%, 75% 93.3%,
         25% 93.3%, 0% 50%
       );
     }
@@ -162,16 +160,14 @@
     .logo-n::before {
       content: "";
       position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border: 2px solid #fdfdfd;
+      inset: -3px;
+      border: 2px solid #f2f2f2;
       clip-path: polygon(
-        25% 6.7%, 75% 6.7%, 
-        100% 50%, 75% 93.3%, 
+        25% 6.7%, 75% 6.7%,
+        100% 50%, 75% 93.3%,
         25% 93.3%, 0% 50%
       );
+      pointer-events: none;
     }
 
     .logo-n span {
@@ -234,9 +230,7 @@
     </div>
   </div>
 
-  <div class="cashback">
-    NX Rewards Cashback
-  </div>
+  <div class="cashback">NX Rewards Cashback</div>
 
   <div class="footer-bar">
     <span>… Actions</span>
@@ -272,8 +266,7 @@
       year: 'numeric'
     }).format(now);
 
-    document.getElementById("expiry-time").textContent =
-      `${timeStr} ${dateStr}`;
+    document.getElementById('expiry-time').textContent = `${timeStr} ${dateStr}`;
   }
 
   updateExpiry();
