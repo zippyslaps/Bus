@@ -23,7 +23,7 @@ function updateExpiry() {
     month: '2-digit',
     year: 'numeric'
   });
-  document.getElementById('live-expiry').textContent = `${timeStr} ${dateStr}`;
+  document.getElementById('expiry-time').textContent = `${timeStr} ${dateStr}`;
 }
 
 updateExpiry();                    // Run immediately
