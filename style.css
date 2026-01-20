@@ -189,3 +189,6 @@ body {
   color: #555;
   border-top: 1px dashed #ccc;
 }
+html, body {
+  background-color: #ffffff !important;
+}
