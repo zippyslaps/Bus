@@ -49,12 +49,9 @@
       position: absolute;
       top: 7px;
       right: 7px;
-      font-size: 0px;
-      color: black;
-      z-index: 10;
+      font-size: 0;
       background: transparent;
-      padding: 4px 10px;
-      border-radius: 20px;
+      z-index: 10;
     }
 
     .header {
@@ -90,7 +87,6 @@
       50% { opacity: 0.7; }
     }
 
-    /* EXPIRY BAR */
     .expiry-container {
       position: relative;
       height: 78px;
@@ -109,7 +105,6 @@
       flex: 1;
     }
 
-    /* SWAYING EXPIRY TIME */
     .expiry-time {
       position: absolute;
       inset: 0;
@@ -131,7 +126,6 @@
       100% { transform: translateX(-28.5px); }
     }
 
-    /* VERIFIED BAR */
     .verified {
       background: #ffcc00;
       color: black;
@@ -143,7 +137,6 @@
       border-radius: 8px;
     }
 
-    /* LOGO AREA WITH HEX N */
     .logo-area {
       padding: 0 20px 4px;
       text-align: center;
@@ -153,7 +146,7 @@
     .logo-n {
       width: 72px;
       height: 72px;
-      background: #4b0082;       /* purple inside */
+      background: #4b0082;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -163,32 +156,30 @@
         25% 6.7%, 75% 6.7%, 
         100% 50%, 75% 93.3%, 
         25% 93.3%, 0% 50%
-      ); /* purple hex */
+      );
     }
 
-    /* Outer white hexagon ring */
     .logo-n::before {
       content: "";
       position: absolute;
-      top: -4px; left: -4px;
-      right: -4px; bottom: -4px;
-      border: 2px solid #fdfdfd; /* thin white ring */
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 2px solid #fdfdfd;
       clip-path: polygon(
         25% 6.7%, 75% 6.7%, 
         100% 50%, 75% 93.3%, 
         25% 93.3%, 0% 50%
       );
-      pointer-events: none;
     }
 
     .logo-n span {
       font-size: 42px;
       font-weight: bold;
-      color: #fdfdfd;           /* N color white */
-      position: relative;
+      color: #fdfdfd;
     }
 
-    /* NX REWARDS CASHBACK BAR */
     .cashback {
       background: #0066cc;
       color: white;
@@ -196,7 +187,6 @@
       font-weight: bold;
       text-align: center;
       font-size: 15px;
-      margin: 0;
     }
 
     .footer-bar {
@@ -213,7 +203,7 @@
 <body>
 
 <div class="ticket">
-  <div class="close">Close</div>
+  <div class="close"></div>
 
   <div class="header">
     nBus - 1618 - Direct Issue nBus - 1618
@@ -233,7 +223,7 @@
       <div class="strip" style="background:#c2185b"></div>
       <div class="strip" style="background:#8bc34a"></div>
     </div>
-    <div class="expiry-time" id="expiry-time">19:48:27 14/12/2025</div>
+    <div class="expiry-time" id="expiry-time"></div>
   </div>
 
   <div class="verified">16-18 Verified ✓</div>
@@ -265,10 +255,25 @@
   });
 
   function updateExpiry() {
-    const expiry = new Date(Date.now() + 24*60*60*1000);
-    const time = expiry.toLocaleTimeString("en-GB", {hour12:false, hour:"2-digit", minute:"2-digit", second:"2-digit"});
-    const date = expiry.toLocaleDateString("en-GB", {day:"2-digit", month:"2-digit", year:"numeric"});
-    document.getElementById("expiry-time").textContent = time + " " + date;
+    const now = new Date();
+
+    const timeStr = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/London',
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }).format(now);
+
+    const dateStr = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/London',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    }).format(now);
+
+    document.getElementById("expiry-time").textContent =
+      `${timeStr} ${dateStr}`;
   }
 
   updateExpiry();
