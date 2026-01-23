@@ -148,6 +148,7 @@
         /* THE FLATTENED 6-SIDED RING WITH THICKER FAINT WHITE BORDER */
         /* FLATTENED HEXAGON - THICK RING - MATCHED PURPLE */
         /* FLATTENED HEXAGON - THICKER & DARKER FAINT WHITE */
+     /* FLATTENED HEXAGON - THICKER & HIGH VISIBILITY */
     .logo-n {
       width: 90px;
       height: 70px; 
@@ -156,8 +157,8 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      /* Reduced from 0.5 to 0.35 to make it look a bit darker/fainter */
-      background: rgba(255, 255, 255, 0.35); 
+      /* Increased opacity to 0.7 for better visibility */
+      background: rgba(255, 255, 255, 0.7); 
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     }
 
@@ -165,7 +166,7 @@
       content: "";
       position: absolute;
       inset: 6px; 
-      /* Matches the purple background of your logo-area box */
+      /* Matches your logo-area background exactly */
       background: #4b0082; 
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       z-index: 1;
@@ -175,8 +176,8 @@
       position: relative;
       font-size: 54px; 
       font-weight: bold;
-      /* Matches the ring opacity to keep it consistent */
-      color: rgba(255, 255, 255, 0.35); 
+      /* Increased opacity to 0.7 to match the ring visibility */
+      color: rgba(255, 255, 255, 0.7); 
       font-family: Arial, sans-serif;
       z-index: 2;
       line-height: 1;
