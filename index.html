@@ -134,47 +134,49 @@
     }
 
     /* LOGO AREA */
-    .logo-area {
-      padding: 18px 20px 16px;
-      text-align: center;
-      background: linear-gradient(to bottom, #4f1276, #56278f);
-      margin: 0 20px;
-    }
+    /* UPDATED LOGO AREA TO MATCH IMAGE */
+.logo-area {
+  padding: 30px 20px; /* Increased padding for better spacing */
+  text-align: center;
+  /* Deep purple to dark plum gradient */
+  background: linear-gradient(to bottom, #421b4d, #2d133a); 
+  margin: 0 20px;
+  border-radius: 4px; /* Slight rounding on the container corners */
+}
 
-    /* UPDATED n LOGO (matches app style) */
-    .logo-n {
-      width: 74px;
-      height: 74px;
-      background: linear-gradient(to bottom, #5b2a86, #4a1f6f);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      clip-path: polygon(
-        25% 6.7%, 75% 6.7%,
-        100% 50%, 75% 93.3%,
-        25% 93.3%, 0% 50%
-      );
-    }
+.logo-n {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* The hexagonal shape is created using this clip-path */
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  /* Semi-transparent white border effect */
+  background: rgba(255, 255, 255, 0.2); 
+  position: relative;
+}
 
-    .logo-n::before {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      background: #ffffff;
-      clip-path: polygon(
-        25% 6.7%, 75% 6.7%,
-        100% 50%, 75% 93.3%,
-        25% 93.3%, 0% 50%
-      );
-      z-index: -1;
-    }
+/* This creates the inner "hollow" look with the thin white border */
+.logo-n::after {
+  content: "";
+  position: absolute;
+  inset: 4px; /* This defines the border thickness */
+  background: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
 
-    .logo-n span {
-      font-size: 44px;
-      font-weight: 600;
-      color: #f2f2f2;
+.logo-n span {
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  z-index: 2;
+  font-family: Arial, sans-serif;
+  opacity: 0.9;
+}
+
     }
 
     .cashback {
