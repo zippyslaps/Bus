@@ -147,6 +147,7 @@
         /* THE FLATTENED 6-SIDED RING WITH FAINT WHITE */
         /* THE FLATTENED 6-SIDED RING WITH THICKER FAINT WHITE BORDER */
         /* FLATTENED HEXAGON - THICK RING - MATCHED PURPLE */
+        /* FLATTENED HEXAGON - THICKER & DARKER FAINT WHITE */
     .logo-n {
       width: 90px;
       height: 70px; 
@@ -155,15 +156,16 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      background: rgba(255, 255, 255, 0.5); /* Faint white ring */
+      /* Reduced from 0.5 to 0.35 to make it look a bit darker/fainter */
+      background: rgba(255, 255, 255, 0.35); 
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     }
 
     .logo-n::after {
       content: "";
       position: absolute;
-      inset: 6px; /* Thick ring */
-      /* Matches the purple background of your logo-area box exactly */
+      inset: 6px; 
+      /* Matches the purple background of your logo-area box */
       background: #4b0082; 
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       z-index: 1;
@@ -171,14 +173,15 @@
 
     .logo-n span {
       position: relative;
-      font-size: 54px; /* Bigger 'n' */
+      font-size: 54px; 
       font-weight: bold;
-      color: rgba(255, 255, 255, 0.5); /* Faint white to match the ring */
+      /* Matches the ring opacity to keep it consistent */
+      color: rgba(255, 255, 255, 0.35); 
       font-family: Arial, sans-serif;
       z-index: 2;
       line-height: 1;
       display: block;
-      margin-top: -2px; /* Fine-tune centering for the larger font */
+      margin-top: -2px; 
 
 
 
