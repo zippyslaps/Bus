@@ -145,24 +145,24 @@
         /* The main hexagon container (hollow center) */
         /* THE PERFECT 6-SIDED RING */
         /* THE FLATTENED 6-SIDED RING WITH FAINT WHITE */
+        /* THE FLATTENED 6-SIDED RING WITH THICKER FAINT WHITE BORDER */
     .logo-n {
       width: 90px;
-      height: 70px; /* Reduced height to make it vertically shorter */
+      height: 70px; 
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      background: rgba(255, 255, 255, 0.6); /* Faint white (60% opacity) */
-      /* Perfect 6-sided hexagon shape */
+      background: rgba(255, 255, 255, 0.5); /* Faint white */
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     }
 
-    /* This creates the purple middle to make it look like a ring */
     .logo-n::after {
       content: "";
       position: absolute;
-      inset: 3px; /* Slightly thinner ring thickness */
+      /* INCREASED INSET FOR THICKER RING */
+      inset: 6px; 
       background: linear-gradient(to bottom, #4b0082, #301934); 
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       z-index: 1;
@@ -170,12 +170,13 @@
 
     .logo-n span {
       position: relative;
-      font-size: 48px; /* Slightly smaller to fit the flatter shape */
+      font-size: 44px; /* Slightly smaller to fit inside the thicker ring */
       font-weight: bold;
-      color: rgba(255, 255, 255, 0.9); /* Also slightly faint white */
+      color: rgba(255, 255, 255, 0.9);
       font-family: Arial, sans-serif;
       z-index: 2;
       line-height: 1;
+
 
     }
 
