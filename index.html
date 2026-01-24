@@ -120,15 +120,16 @@
   font-weight: 500;
   z-index: 2;
   text-shadow: 
-      -0.6px -0.6px 0 rgba(0,0,0,0.7),
-   0.6px -0.6px 0 rgba(0,0,0,0.7),
-  -0.6px  0.6px 0 rgba(0,0,0,0.7),
-   0.6px  0.6px 0 rgba(0,0,0,0.7),
+  /* solid outline ring */
+  -1px -1px 0 #000,
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000,
 
-  /* gentle halo */
-  0 0 4px rgba(0,0,0,0.6),
+  /* soft blur halo */
+  0 0 3px rgba(0,0,0,0.9),
 
-  /* your existing depth shadow */
+  /* your heavy shadow */
   4px 4px 8px rgba(0,0,0,1);
   white-space: nowrap;
   animation: sway 2.8s infinite ease-in-out; /* keep swaying */
