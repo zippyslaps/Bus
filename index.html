@@ -49,16 +49,19 @@
     }
 
     .close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 12;
-      font-weight: 500;
-      cursor: pointer;
-      text-align: center;
-      colour: black 
-      background: transparent;
-    }
+  position: absolute;
+  top: 6px;              /* sits in the top padding area */
+  right: 16px;           /* slightly in from the edge */
+
+  font-size: 18px;       /* similar size to 16-18 text */
+  font-weight: 600;
+  color: #000;           /* black text */
+
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  line-height: 1;
+}
 
     .header {
       background: #a30b23;
@@ -231,7 +234,7 @@
 <body>
 
 <div class="ticket">
-  <div class="close"></div>
+  <div class="close">Close</div>
 
   <div class="header">
     nBus - 1618 - Direct Issue nBus - 1618
