@@ -39,31 +39,26 @@
 
     /* Top white strip with rounded top corners */
     .top-strip {
-      background: #fdfdfd;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-      padding: 6px 18px;            /* keep exactly as before */
-      position: relative;            /* needed for absolute positioning of Close */
-    }
+  background: #fdfdfd;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 6px 18px;          
+  display: flex;              /* use flexbox */
+  justify-content: flex-end;  /* push content to the right */
+  align-items: center;        /* vertically center inside the padding */
+}
 
-    /* Close text positioned top-right without changing padding */
-    .top-strip .close {
-      font-size: 17px;
-      font-weight: 400;
-      letter-spacing: 0.3px;
-      color: #000;
-      line-height: 1;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      padding: 0;
-
-      /* ONLY change: pin to top-right */
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
+.top-strip .close {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: #000;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
     .header {
       background: #a30b23;
       padding: 10px 4px;
